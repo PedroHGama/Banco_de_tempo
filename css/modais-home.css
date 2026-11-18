@@ -1,0 +1,196 @@
+/*
+  BANCO DE TEMPO — MELHORIA DOS MODAIS DA PÁGINA INICIAL
+  Adicione este arquivo depois de styles.css no projeto/index.html.
+*/
+
+/* Fundo escuro e centralização dos modais */
+#modal-nova-vaga.modal-backdrop,
+#modal-login.modal-backdrop,
+#modal-vaga-detalhe.modal-backdrop {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9999 !important;
+  display: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 24px !important;
+  overflow-y: auto !important;
+  background: rgba(11, 31, 39, .68) !important;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .22s ease, visibility .22s ease;
+}
+
+#modal-nova-vaga.modal-backdrop.active,
+#modal-login.modal-backdrop.active,
+#modal-vaga-detalhe.modal-backdrop.active {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Cartão do modal */
+#modal-nova-vaga .modal-box,
+#modal-login .modal-box,
+#modal-vaga-detalhe .modal-box {
+  position: relative !important;
+  width: min(100%, 560px) !important;
+  max-width: 560px !important;
+  max-height: min(88vh, 850px) !important;
+  margin: auto !important;
+  padding: 34px !important;
+  overflow-y: auto !important;
+  border: 1px solid rgba(255,255,255,.75) !important;
+  border-radius: 22px !important;
+  background: #fff !important;
+  box-shadow: 0 28px 90px rgba(0, 20, 28, .30) !important;
+  color: #18323b !important;
+  animation: homeModalEnter .22s ease both;
+}
+
+#modal-login .modal-box {
+  width: min(100%, 420px) !important;
+  max-width: 420px !important;
+  padding: 34px !important;
+}
+
+@keyframes homeModalEnter {
+  from { opacity: 0; transform: translateY(12px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Títulos e textos */
+#modal-nova-vaga .modal-box h2,
+#modal-login .modal-box h2 {
+  margin: 0 42px 9px 0 !important;
+  color: #18323b !important;
+  font-size: clamp(1.25rem, 2vw, 1.55rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -.035em;
+}
+
+#modal-nova-vaga .modal-box > p {
+  margin: 0 0 25px !important;
+  color: #647780 !important;
+  font-size: .91rem !important;
+  line-height: 1.65 !important;
+}
+
+/* Botão fechar */
+#modal-nova-vaga .modal-close,
+#modal-login .modal-close,
+#modal-vaga-detalhe .modal-close {
+  position: absolute !important;
+  top: 17px !important;
+  right: 17px !important;
+  width: 38px !important;
+  height: 38px !important;
+  display: grid !important;
+  place-items: center !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+  background: #eff5f4 !important;
+  color: #476067 !important;
+  font-size: 1.45rem !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+#modal-nova-vaga .modal-close:hover,
+#modal-login .modal-close:hover,
+#modal-vaga-detalhe .modal-close:hover {
+  background: #dff1ec !important;
+  color: #087568 !important;
+  transform: rotate(4deg);
+}
+
+/* Campos do formulário de publicação */
+#modal-nova-vaga .form-group { margin-bottom: 17px !important; }
+#modal-nova-vaga .form-group label,
+#modal-login .form-group label {
+  display: block !important;
+  margin: 0 0 7px !important;
+  color: #344f57 !important;
+  font-size: .82rem !important;
+  font-weight: 750 !important;
+}
+#modal-nova-vaga .form-control,
+#modal-login .form-control {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-height: 46px !important;
+  padding: 11px 13px !important;
+  border: 1px solid #dce7e6 !important;
+  border-radius: 11px !important;
+  outline: none !important;
+  background: #fbfdfd !important;
+  color: #203b43 !important;
+  font: inherit !important;
+  font-size: .9rem !important;
+  box-shadow: none !important;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+#modal-nova-vaga textarea.form-control {
+  min-height: 112px !important;
+  resize: vertical !important;
+}
+#modal-nova-vaga .form-control:focus,
+#modal-login .form-control:focus {
+  border-color: #38a99a !important;
+  background: #fff !important;
+  box-shadow: 0 0 0 4px rgba(8,127,115,.10) !important;
+}
+#modal-nova-vaga .form-row {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 15px !important;
+}
+#modal-nova-vaga .btn-full,
+#modal-login .btn-full {
+  width: 100% !important;
+  min-height: 48px !important;
+  margin-top: 8px !important;
+  border-radius: 11px !important;
+  font-size: .9rem !important;
+  font-weight: 800 !important;
+}
+
+/* Login e cadastro: abas e botão Google */
+#modal-login .modal-box > div[style*="border-bottom"] {
+  gap: 8px !important;
+  margin: 4px 0 23px !important;
+  padding-bottom: 9px !important;
+  border-bottom: 1px solid #e5eded !important;
+}
+#modal-login #tab-login-btn,
+#modal-login #tab-register-btn {
+  padding: 11px 8px !important;
+  border-bottom-width: 3px !important;
+  font-size: .88rem !important;
+}
+#modal-login button[onclick="handleGoogleLogin()"] {
+  box-sizing: border-box !important;
+  min-height: 46px !important;
+  border: 1px solid #dce5e5 !important;
+  border-radius: 11px !important;
+  color: #344f57 !important;
+  font-size: .86rem !important;
+  transition: background .2s ease, border-color .2s ease;
+}
+#modal-login button[onclick="handleGoogleLogin()"]:hover {
+  background: #f6faf9 !important;
+  border-color: #b8d8d1 !important;
+}
+
+/* Em telas pequenas, manter o formulário confortável */
+@media (max-width: 600px) {
+  #modal-nova-vaga.modal-backdrop,
+  #modal-login.modal-backdrop,
+  #modal-vaga-detalhe.modal-backdrop { padding: 12px !important; }
+  #modal-nova-vaga .modal-box,
+  #modal-login .modal-box { padding: 26px 20px !important; border-radius: 17px !important; }
+  #modal-nova-vaga .form-row { grid-template-columns: 1fr !important; gap: 0 !important; }
+}

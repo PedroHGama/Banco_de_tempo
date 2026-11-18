@@ -1,0 +1,208 @@
+/*
+  BANCO DE TEMPO — RODAPÉ PROFISSIONAL
+  Aplicar somente em projeto/index.html, depois de home-theme.css.
+*/
+
+.footer {
+  position: relative;
+  overflow: hidden;
+  padding: 66px 0 0 !important;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(33, 160, 139, .18), transparent 28%),
+    radial-gradient(circle at 92% 100%, rgba(48, 112, 145, .18), transparent 30%),
+    linear-gradient(135deg, #102f3a 0%, #123b43 55%, #102d3b 100%) !important;
+  color: #d9e7e8 !important;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -110px;
+  right: 8%;
+  width: 250px;
+  height: 250px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 50%;
+  box-shadow: 0 0 0 25px rgba(255,255,255,.018), 0 0 0 55px rgba(255,255,255,.014);
+  pointer-events: none;
+}
+
+.footer .container {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-grid {
+  display: grid !important;
+  grid-template-columns: minmax(260px, 1.65fr) minmax(150px, .85fr) minmax(190px, 1fr) !important;
+  gap: clamp(28px, 5vw, 72px) !important;
+  align-items: start !important;
+  margin-bottom: 48px !important;
+}
+
+.footer-col {
+  min-width: 0;
+}
+
+.footer-logo {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-bottom: 19px !important;
+  text-decoration: none !important;
+}
+
+.footer .logo-icon {
+  width: 48px !important;
+  height: 48px !important;
+  border: 1px solid rgba(156, 235, 216, .2) !important;
+  border-radius: 15px !important;
+  background: linear-gradient(145deg, rgba(105, 215, 188, .2), rgba(116, 174, 211, .15)) !important;
+  color: #8ce2cc !important;
+  font-size: 1.45rem !important;
+}
+
+.footer .brand-name {
+  color: #fff !important;
+  font-size: 1.18rem !important;
+  font-weight: 850 !important;
+  letter-spacing: -.04em !important;
+}
+
+.footer-col > p {
+  max-width: 390px;
+  margin: 0 0 15px !important;
+  color: #c0d2d5 !important;
+  font-size: .91rem !important;
+  line-height: 1.85 !important;
+}
+
+.footer-col .edu-alert {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 7px !important;
+  padding: 9px 12px;
+  border: 1px solid rgba(124, 211, 190, .2);
+  border-radius: 10px;
+  background: rgba(124, 211, 190, .08);
+  color: #a9e6d5 !important;
+  font-size: .78rem !important;
+  line-height: 1.5 !important;
+}
+
+.footer-col h4 {
+  position: relative;
+  display: inline-block;
+  margin: 5px 0 23px !important;
+  padding-bottom: 11px;
+  color: #fff !important;
+  font-size: .91rem !important;
+  font-weight: 800 !important;
+  letter-spacing: .01em;
+}
+
+.footer-col h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 34px;
+  height: 3px;
+  border-radius: 5px;
+  background: #55c6aa;
+}
+
+.footer-col ul {
+  display: grid;
+  gap: 12px;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.footer-col ul li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.footer-col ul a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #b9cdd0 !important;
+  font-size: .86rem !important;
+  line-height: 1.5;
+  text-decoration: none !important;
+  transition: color .18s ease, transform .18s ease;
+}
+
+.footer-col ul a::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  flex: 0 0 5px;
+  border-radius: 50%;
+  background: #55c6aa;
+  opacity: .8;
+  transition: transform .18s ease, opacity .18s ease;
+}
+
+.footer-col ul a:hover {
+  color: #fff !important;
+  transform: translateX(3px);
+}
+
+.footer-col ul a:hover::before {
+  opacity: 1;
+  transform: scale(1.35);
+}
+
+.footer-bottom {
+  position: relative;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-top: 1px solid rgba(220, 240, 240, .13) !important;
+  background: rgba(4, 22, 29, .20);
+  text-align: center;
+}
+
+.footer-bottom .container {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+.footer-bottom p {
+  margin: 0 !important;
+  color: #a9c0c4 !important;
+  font-size: .78rem !important;
+  line-height: 1.7 !important;
+}
+
+/* Tablet */
+@media (max-width: 850px) {
+  .footer { padding-top: 52px !important; }
+  .footer-grid {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) !important;
+    gap: 34px !important;
+  }
+  .footer-col:first-child { grid-column: 1 / -1; }
+  .footer-col:first-child > p { max-width: 600px; }
+}
+
+/* Celular */
+@media (max-width: 560px) {
+  .footer { padding-top: 42px !important; }
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    margin-bottom: 34px !important;
+  }
+  .footer-col:first-child { grid-column: auto; }
+  .footer-col h4 { margin-bottom: 16px !important; }
+  .footer-col ul { gap: 10px; }
+  .footer-bottom .container {
+    padding: 17px 18px !important;
+  }
+  .footer-bottom p { font-size: .72rem !important; }
+}
